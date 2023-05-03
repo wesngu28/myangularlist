@@ -1,3 +1,7 @@
+export const config = {
+    runtime: 'edge'
+}
+
 import { parse } from "node-html-parser"
 
 interface rating {rating: string, title: string, title_eng: string, url: string, img: string}
