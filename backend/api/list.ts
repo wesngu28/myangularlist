@@ -21,20 +21,20 @@ export default async function parser (req: Request): Promise<Array<rating> | {er
             let list = shows.slice(0, shows.length-2).replaceAll("&quot;", `"`)
             const databroadcasts = list.indexOf("data-broadcasts")
             const showsObject = databroadcasts > -1 ? JSON.parse(list.slice(0, databroadcasts-2)) : JSON.parse(list + "]")
-            return showsObject.map((show: { score: any; anime_title: any; manga_title: any; anime_title_eng: any; manga_english: any; anime_url: any; manga_url: any; anime_image_path: any; manga_image_path: any }) => {
-                return new Response(JSON.stringify({
+            return new Response(JSON.stringify(showsObject.map((show: { score: any; anime_title: any; manga_title: any; anime_title_eng: any; manga_english: any; anime_url: any; manga_url: any; anime_image_path: any; manga_image_path: any }) => {
+                return {
                     rating: show.score,
                     title: listtype === "anime" ? show.anime_title : show.manga_title,
                     title_eng: listtype === "anime" ? show.anime_title_eng : show.manga_english,
                     url: listtype === "anime" ? show.anime_url : show.manga_url,
                     img: listtype === "anime" ? show.anime_image_path : show.manga_image_path
-                }), 
-                {
-                    status: 200,
-                    headers: {
-                        'content-type': 'application/json',
-                    },
-                })
+                }
+            })),
+            {
+                status: 200,
+                headers: {
+                    'content-type': 'application/json',
+                },
             });
         } else {
             throw new Error("No table exists")
