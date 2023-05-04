@@ -4,9 +4,7 @@ export const config = {
 
 import { parse } from "node-html-parser"
 
-interface rating {rating: string, title: string, title_eng: string, url: string, img: string}
-
-export default async function parser (req: Request): Promise<Array<rating> | {error: string}> {
+export default async function parser (req: Request) {
     const { searchParams } = new URL(req.url)
     const username = searchParams.get('user')
     const listtype = searchParams.get('type')
@@ -34,6 +32,7 @@ export default async function parser (req: Request): Promise<Array<rating> | {er
                 status: 200,
                 headers: {
                     'content-type': 'application/json',
+                    'Access-Control-Allow-Origin': 'http://localhost:4200'
                 },
             });
         } else {
