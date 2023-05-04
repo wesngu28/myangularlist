@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MalParserService } from 'src/app/services/mal-parser.service';
+import { TierService } from 'src/app/services/tier.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,8 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HeroComponent {
   title = 'My Anime tierList';
+  username = '';
+  parsedData: any = [];
 
-  wungin() {
-    console.log('wungin')
+  constructor(private malParserService: MalParserService, private tierService: TierService) {}
+
+  async getData() {
+    (await this.malParserService.malparse(this.username, "anime")).subscribe(data => {
+      this.tierService.setParsedData(data);
+    });
   }
 }
