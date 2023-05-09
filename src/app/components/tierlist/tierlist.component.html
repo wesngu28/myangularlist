@@ -1,1 +1,9 @@
-<p *ngFor="let data of parsedData">{{ data.title }}</p>
+<div *ngIf="parsedData[0]" class="anime-container">
+    <ng-container *ngFor="let data of parsedData">
+        <ng-container *ngIf="data.rating === 9 || data.rating === 10">
+            <div class="img-container">
+                <img src="{{data.img}}" />
+            </div>
+        </ng-container>
+    </ng-container>
+</div>
