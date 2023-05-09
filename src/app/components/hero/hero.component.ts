@@ -10,13 +10,14 @@ import { TierService } from 'src/app/services/tier.service';
 export class HeroComponent {
   title = 'My Anime tierList';
   username = '';
-  parsedData: any = [];
+  parsedData = [];
 
   constructor(private malParserService: MalParserService, private tierService: TierService) {}
 
   async getData() {
     (await this.malParserService.malparse(this.username, "anime")).subscribe(data => {
       this.tierService.setParsedData(data);
+      this.parsedData = data as [];
     });
   }
 }
