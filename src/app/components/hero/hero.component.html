@@ -1,4 +1,4 @@
-<div *ngIf="!parsedData[0]" class="container">
+<div *ngIf="parsedData && !parsedData[0]" class="container">
   <h1>{{ title }}</h1>
   <input [(ngModel)]="username" #ctrl="ngModel" class="input" type="text" placeholder="Your MAL username" />
   <app-button color="limegreen" text="Generate" (clickEvent)="getData()" ></app-button>

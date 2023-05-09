@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ButtonComponent } from './components/button/button.component';
 import { TierlistComponent } from './components/tierlist/tierlist.component';
+import { TierrowComponent } from './components/tierlist/tierrow/tierrow.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroComponent,
     ButtonComponent,
-    TierlistComponent
+    TierlistComponent,
+    TierrowComponent,
   ],
   imports: [
     BrowserModule,
