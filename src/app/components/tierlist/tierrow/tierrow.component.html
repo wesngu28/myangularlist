@@ -1,7 +1,12 @@
-<div class="anime-container">
-    <ng-container *ngFor="let data of tier">
-        <div class="img-container">
-            <img src="{{data.img}}" />
-        </div>
-    </ng-container>
+<div class="tier-row">
+    <div class="tier-label">
+        {{tierletter}}
+    </div>
+    <div class="anime-container">
+        <ng-container *ngFor="let data of tier">
+            <div class="img-container">
+                <img src="{{data.img}}" />
+            </div>
+        </ng-container>
+    </div>
 </div>

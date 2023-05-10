@@ -1,6 +1,8 @@
 .anime-container {
     width: 100vw;
+    min-height: 139px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .img-container {
@@ -9,8 +11,16 @@
     img {
         width: auto;
         height: auto;
-        max-width: 100%;
-        max-width: 100%;
+        max-width: 50%;
+        max-width: 50%;
         object-fit: contain;
     }
+}
+
+.tier-label {
+    min-height: 139px;
+}
+
+.tier-row {
+    display: flex;
 }
