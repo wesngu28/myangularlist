@@ -10,6 +10,7 @@ import { TierService } from 'src/app/services/tier.service';
 export class HeroComponent {
   title = 'My Anime tierList';
   username = '';
+  type = '';
   parsedData = [];
 
   constructor(private malParserService: MalParserService, private tierService: TierService) {}
