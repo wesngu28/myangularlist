@@ -1,3 +1,5 @@
-<div *ngFor="let tier of tiers">
-    <app-tierrow *ngIf="parsedData && parsedData[0]" [tierletter]="tier.name" [tier]="tier.data"></app-tierrow>
+<div *ngIf="parsedData && parsedData[0]" id="tierlist">
+    <div *ngFor="let tier of tiers">
+        <app-tierrow *ngIf="parsedData && parsedData[0]" [tierletter]="tier.name" [tier]="tier.data"></app-tierrow>
+    </div>
 </div>
