@@ -1,25 +1,53 @@
 .anime-container {
-    min-height: 139px;
     display: grid;
+    background-color: rgb(26, 26, 23);
     grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .img-container {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 96px;
+    max-height: 136px;
     img {
         width: auto;
         height: auto;
-        max-width: 90%;
-        max-width: 90%;
+        max-width: 100%;
+        max-width: 100%;
         object-fit: contain;
     }
 }
 
-.tier-label {
-    min-height: 139px;
-}
-
 .tier-row {
     display: flex;
+}
+
+.tier-label {
+    min-height: 136px;
+    min-width: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s-tier {
+    background-color: rgb(255, 127, 127);
+}
+
+.a-tier {
+    background-color: rgb(255, 191, 127);
+}
+
+.b-tier {
+    background-color: rgb(255, 223, 127);
+}
+
+.c-tier {
+    background-color: rgb(255, 255, 127);
+}
+
+.d-tier {
+    background-color: rgb(191, 255, 127);
+}
+
+.f-tier {
+    background-color: rgb(127, 255, 127);
 }

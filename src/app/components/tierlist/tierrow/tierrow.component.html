@@ -1,5 +1,13 @@
 <div class="tier-row">
-    <div class="tier-label">
+    <div class="tier-label" 
+        [ngClass]="{
+            's-tier': tierletter === 'S', 
+            'a-tier': tierletter === 'A',
+            'b-tier': tierletter === 'B',
+            'c-tier': tierletter === 'C',
+            'd-tier': tierletter === 'D',
+            'f-tier': tierletter === 'F'
+        }">
         {{tierletter}}
     </div>
     <div class="anime-container">
