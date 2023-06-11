@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TierService } from 'src/app/services/tier.service';
+import { UsernameService } from 'src/app/services/username.service';
 
 @Component({
   selector: 'app-tierlist',
@@ -9,13 +10,15 @@ import { TierService } from 'src/app/services/tier.service';
 export class TierlistComponent implements OnInit {
   parsedData: any;
   tiers: any;
+  username: string = '';
 
-  constructor(private tierService: TierService) {}
+  constructor(private tierService: TierService, private usernameService: UsernameService) {}
 
   ngOnInit(): void {
     this.tierService.getParsedData().subscribe(data => { 
       this.parsedData = data 
       this.tiers = this.generateTiers(data)
+      this.username = this.usernameService.getUsername()
     })
   }
 
@@ -35,7 +38,6 @@ export class TierlistComponent implements OnInit {
       const sTier = tiers.splice(sTierIndex, 1)[0];
       tiers.unshift(sTier);
     }
-    console.log(tiers)
     return tiers;
   }
 }
