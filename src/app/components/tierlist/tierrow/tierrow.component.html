@@ -13,7 +13,7 @@
     <div class="anime-container">
         <ng-container *ngFor="let data of tier">
             <div class="img-container">
-                <img src="{{data.img}}" />
+                <img src="{{data.img}}" (click)="showShowInformation(data)"/>
             </div>
         </ng-container>
     </div>

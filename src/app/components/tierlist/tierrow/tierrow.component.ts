@@ -8,4 +8,7 @@ import { Component, Input } from '@angular/core';
 export class TierrowComponent {
   @Input() tier: any;
   @Input() tierletter: string = '';
+  showShowInformation(data: any) {
+    console.log(data);
+  }
 }
