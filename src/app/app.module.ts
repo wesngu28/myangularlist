@@ -7,6 +7,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { ButtonComponent } from './components/button/button.component';
 import { TierlistComponent } from './components/tierlist/tierlist.component';
 import { TierrowComponent } from './components/tierlist/tierrow/tierrow.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { TierrowComponent } from './components/tierlist/tierrow/tierrow.componen
     ButtonComponent,
     TierlistComponent,
     TierrowComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
