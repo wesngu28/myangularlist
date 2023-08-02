@@ -1,1 +1,11 @@
-<p>{{showData}}</p>
+<div id="modal" *ngIf="showModal" (click)="onModalClick($event)">
+    <div id="modal-content">
+        <a [href]="malLink">
+            <p>{{showData.title}}</p>
+            <img [src]="image" />
+            <p>{{showData.tier}}</p>
+            <p>{{showData.rating}}</p>
+            <p>{{showData.created_at}}</p>
+        </a>
+    </div>
+</div>
